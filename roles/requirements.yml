@@ -1,1 +1,2 @@
-- src: community.vmware
+collections:
+- name: community.vmware
