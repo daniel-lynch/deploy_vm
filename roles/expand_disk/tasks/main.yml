@@ -1,0 +1,7 @@
+---
+- name: expand disk
+  shell: |
+    sgdisk -d 3 -n 3 /dev/sda
+    partprobe
+    pvresize /dev/sda3
+    lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv -r

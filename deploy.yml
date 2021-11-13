@@ -1,3 +1,10 @@
 - hosts: localhost
   roles:
     - deploy_vm
+- hosts: created_vms
+  tasks:
+    - name: expand disk if > 10GB
+      import_role:
+        name: expand_disk
+      become: yes
+      when: vm_size > 10
