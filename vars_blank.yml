@@ -1,0 +1,15 @@
+vcenter_hostname:
+esxi_hostname:
+vcenter_username:
+vcenter_password:
+ansible_user:
+datacenter:
+vm_name:
+vm_cpus:
+vm_cores_per_socket:
+vm_memory:
+vm_network:
+vm_template:
+vm_size:
+datastore:
+ansible_sudo_pass:
