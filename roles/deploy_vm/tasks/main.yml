@@ -38,4 +38,4 @@
     name: "{{ deploy.instance.ipv4 }}"
     groups: created_vms
     ansible_user: "{{ ansible_user | default(lookup('env', 'ansible_user')) }}"
-    ansible_sudo_pass: "{{ ansible_sudo_pass | default(lookup('env', 'ansible_sudo_pass')) }}"
+    ansible_sudo_pass: "{{ ansible_sudo_pass | default(lookup('env', 'ansible_password')) }}"
