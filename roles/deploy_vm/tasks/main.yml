@@ -2,7 +2,7 @@
 - name: Create a virtual machine from a template
   community.vmware.vmware_guest:
     hostname: "{{ lookup('env', 'VMWARE_HOST') | default(vcenter_hostname) }}"
-    username: "{{ lookup('env', 'VMWARE_USER' | default(vcenter_username) }}"
+    username: "{{ lookup('env', 'VMWARE_USER') | default(vcenter_username) }}"
     password: "{{lookup('env', 'VMWARE_PASSWORD') | default(vcenter_password) }}"
     esxi_hostname: "{{ esxi_hostname }}"
     datacenter: "{{ datacenter }}"
