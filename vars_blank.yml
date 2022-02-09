@@ -1,7 +1,7 @@
-vcenter_hostname:
+VMWARE_HOST:
 esxi_hostname:
-vcenter_username:
-vcenter_password:
+VMWARE_USER:
+VMWARE_PASSWORD:
 ansible_user:
 datacenter:
 vm_name:
