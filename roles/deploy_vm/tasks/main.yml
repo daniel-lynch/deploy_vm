@@ -37,5 +37,5 @@
   add_host:
     name: "{{ deploy.instance.ipv4 }}"
     groups: created_vms
-    ansible_user: "{{ ansible_user | default(lookup('env', 'ANSIBLE_USER')) }}"
-    ansible_sudo_pass: "{{ ansible_sudo_pass | default(lookup('env', 'ANSIBLE_PASSWORD')) }}"
+    ansible_user: "{{ ansible_user }}"
+    ansible_sudo_pass: "{{ ansible_sudo_pass | default(ansible_password) }}"
