@@ -1,9 +1,9 @@
 ---
 - name: Create a virtual machine from a template
   community.vmware.vmware_guest:
-    hostname: "{{ lookup('env', 'VMWARE_HOST') | default(vcenter_hostname) }}"
-    username: "{{ lookup('env', 'VMWARE_USER') | default(vcenter_username) }}"
-    password: "{{lookup('env', 'VMWARE_PASSWORD') | default(vcenter_password) }}"
+    hostname: "{{ vcenter_hostname | default(lookup('env', 'VMWARE_HOST')) }}"
+    username: "{{ vcenter_username | default(lookup('env', 'VMWARE_USER')) }}"
+    password: "{{ vcenter_password | default(lookup('env', 'VMWARE_PASSWORD')) }}"
     esxi_hostname: "{{ esxi_hostname }}"
     datacenter: "{{ datacenter }}"
     folder: /
@@ -37,5 +37,5 @@
   add_host:
     name: "{{ deploy.instance.ipv4 }}"
     groups: created_vms
-    ansible_user: "{{ ansible_user }}"
-    ansible_sudo_pass: "{{ lookup('env', 'ansible_sudo_pass') | default(ansible_sudo_pass) }}"
+    ansible_user: "{{ ansible_user | default(lookup('env', 'ansible_user')) }}"
+    ansible_sudo_pass: "{{ ansible_sudo_pass | default(lookup('env', 'ansible_sudo_pass')) }}"
