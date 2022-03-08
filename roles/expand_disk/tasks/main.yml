@@ -1,6 +1,7 @@
 ---
 - name: expand disk
   shell: |
+    echo 1 > /sys/block/sda/device/rescan
     sgdisk -d 3 -n 3 /dev/sda
     partprobe
     pvresize /dev/sda3
